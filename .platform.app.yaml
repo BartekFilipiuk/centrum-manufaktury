@@ -41,7 +41,7 @@ web:
       root: 'web/sites/default/files'
       scripts: false
 
-disk: 5120
+disk: 9216
 
 runtime:
   extensions:
