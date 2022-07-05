@@ -1,14 +1,14 @@
 # www to no-www redirect.
-http://www.{default}/:
-  type: redirect
-  to: https://{default}/
-
-https://www.{default}/:
-  type: redirect
-  to: https://{default}/
+#http://www.{default}/:
+#  type: redirect
+#  to: https://{default}/
+#
+#https://www.{default}/:
+#  type: redirect
+#  to: https://{default}/
 
 # PSH doesn't allow us to redirect default to all.
-https://{default}/:
+http://{default}/:
   type: upstream
   upstream: "app:http"
 #  tls:
