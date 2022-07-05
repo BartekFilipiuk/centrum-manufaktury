@@ -1,0 +1,5 @@
+database:
+    type: mysql:10.1
+    disk: 4092
+rediscache:
+    type: redis:3.2

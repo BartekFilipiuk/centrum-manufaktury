@@ -1,0 +1,73 @@
+name: 'app'
+
+type: 'php:7.4'
+
+build:
+  flavor: composer
+
+dependencies:
+  php:
+    "drush/drush": "^10"
+  nodejs:
+    yarn: "1.16"
+
+relationships:
+    database: 'database:mysql'
+
+web:
+  locations:
+    '/':
+      root: 'web'
+      expires: 1d
+      passthru: '/index.php'
+      allow: false
+      rules:
+        '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+          allow: true
+        '^/robots\.txt$':
+          allow: true
+        '^/sitemap\.xml$':
+          allow: true
+        '^/sites/sites\.php$':
+          scripts: false
+        '^/sites/[^/]+/settings.*?\.php$':
+          scripts: false
+
+    '/sites/default/files':
+      allow: true
+      expires: 1y
+      passthru: '/index.php'
+      root: 'web/sites/default/files'
+      scripts: false
+
+disk: 5120
+
+mounts:
+  '/.drush':
+    source: local
+    source_path: drush
+
+hooks:
+  build: |
+    set -e
+  post_deploy: |
+    set -e
+    echo "Update $PLATFORM_SITE"
+    cd $PLATFORM_DIR/web/sites/$PLATFORM_SITE
+    drush -y cache:rebuild
+    drush php-script uuid dir sync --script-path=/app
+    drush -y updatedb
+    drush -y cim
+    drush -y locale:check
+    drush -y locale:update
+    drush -y cache:rebuild
+crons:
+  drupal_cron:
+    spec: '0 4 * * *'
+    cmd: 'cd web ; drush @$PLATFORM_SITE.$PLATFORM_BRANCH cron'
+  snapshot:
+    spec: '0 4 * * *'
+    cmd: |
+      if [ "$PLATFORM_BRANCH" = master ]; then
+          platform backup:create --no-wait
+      fi
