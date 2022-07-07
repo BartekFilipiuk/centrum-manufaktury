@@ -57,14 +57,17 @@ hooks:
     set -e
   post_deploy: |
     set -e
-    cd $PLATFORM_DIR/web
-    drush -y cache:rebuild
-    drush php-script uuid dir sync --script-path=/app
-    drush -y updatedb
-    drush -y cim
-    drush -y locale:check
-    drush -y locale:update
-    drush -y cache:rebuild
+    echo "start the post"
+    pwd
+    ls
+#    cd $PLATFORM_DIR/web
+#    drush -y cache:rebuild
+#    drush php-script uuid dir sync --script-path=/app
+#    drush -y updatedb
+#    drush -y cim
+#    drush -y locale:check
+#    drush -y locale:update
+#    drush -y cache:rebuild
 crons:
   drupal_cron:
     spec: '0 4 * * *'
