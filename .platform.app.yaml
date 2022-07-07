@@ -88,14 +88,13 @@ mounts:
 hooks:
     build: |
         set -e
-        composer dump-autoload
     post_deploy: |
         set -e
         cd web
         drush -y cache-rebuild
-        drush php-script uuid dir sync --script-path=/app
-        drush -y updb
-        drush -y ci
+#        drush php-script uuid dir sync --script-path=/app
+#        drush -y updb
+#        drush -y ci
 
 #crons:
 #    # Run Drupal's cron tasks every 19 minutes.
