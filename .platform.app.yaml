@@ -14,12 +14,10 @@ dependencies:
 
 runtime:
     extensions:
-        - redis
         - sodium
 
 relationships:
     database: 'database:mysql'
-    redis: 'cache:redis'
 
 web:
     locations:
