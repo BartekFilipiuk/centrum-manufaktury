@@ -89,10 +89,11 @@ hooks:
     build: |
         set -e
         composer dump-autoload
-    deploy: |
+    post_deploy: |
         set -e
         cd web
         drush -y cache-rebuild
+        drush php-script uuid dir sync --script-path=/app
         drush -y updb
         drush -y ci
 
