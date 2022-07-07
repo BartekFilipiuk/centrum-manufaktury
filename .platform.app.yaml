@@ -7,7 +7,6 @@ build:
 
 dependencies:
     php:
-      drush/drush: "^10"
       composer/composer: '^2'
     nodejs:
       yarn: "1.16"
