@@ -32,7 +32,8 @@
         "drupal/w3css_paragraphs": "^1.0",
         "drupal/webform": "^6.1",
         "drupal/yg_car_care": "^2.0",
-        "drupal/zuvi": "^8.1"
+        "drupal/zuvi": "^8.1",
+        "php-http/guzzle6-adapter",
     },
     "conflict": {
         "drupal/drupal": "*"
