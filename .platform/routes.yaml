@@ -1,22 +1,6 @@
-# www to no-www redirect.
-#http://www.{default}/:
-#  type: redirect
-#  to: https://{default}/
-#
-#https://www.{default}/:
-#  type: redirect
-#  to: https://{default}/
-
-# PSH doesn't allow us to redirect default to all.
-http://{default}/:
-  type: upstream
-  upstream: "app:http"
-#  tls:
-#    strict_transport_security:
-#      enabled: true
-#      include_subdomains: true
-#      preload: true
-  cache:
-    enabled: true
-    # Base the cache on the session cookie and custom Drupal cookies. Ignore all other cookies.
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
+"https://{default}/":
+    type: upstream
+    upstream: "app:http"
+"https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"
