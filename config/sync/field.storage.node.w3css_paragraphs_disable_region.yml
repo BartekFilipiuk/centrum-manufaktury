@@ -1,0 +1,56 @@
+uuid: cb42c4df-cf00-490e-8c84-91cab8f4f596
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: mwsktmNRXU0R9j3G1P-2GD200X-q4bsgAZ6XiMm6Fo4
+id: node.w3css_paragraphs_disable_region
+field_name: w3css_paragraphs_disable_region
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: navigation
+      label: 'Disable Main Navigation Regions'
+    -
+      value: header
+      label: 'Disable Header Region'
+    -
+      value: welcome_text
+      label: 'Disable Welcome Region'
+    -
+      value: highlighted
+      label: 'Disable Highlighted Region'
+    -
+      value: top_regions
+      label: 'Disable Top Regions'
+    -
+      value: page_title
+      label: 'Disable Page Title Region'
+    -
+      value: breadcrumb
+      label: 'Disable Breadcrumb Region'
+    -
+      value: bottom_regions
+      label: 'Disable Bottom Regions'
+    -
+      value: footer_regions
+      label: 'Disable Footer Regions'
+    -
+      value: footer_menu
+      label: 'Disable Footer Menu'
+    -
+      value: copyright
+      label: 'Hide Copyright'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

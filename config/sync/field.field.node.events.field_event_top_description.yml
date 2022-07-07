@@ -1,0 +1,21 @@
+uuid: fea131e7-745e-4930-a86c-164ced9e524a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_top_description
+    - node.type.events
+  module:
+    - text
+id: node.events.field_event_top_description
+field_name: field_event_top_description
+entity_type: node
+bundle: events
+label: 'Top description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

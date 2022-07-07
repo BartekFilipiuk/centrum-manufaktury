@@ -1,0 +1,14 @@
+uuid: 1cb4418c-22be-4dbd-81a5-5655bf52f97b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nextjs
+  module:
+    - user
+id: user_add_role_action.nextjs
+label: 'Add the nextjs role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: nextjs

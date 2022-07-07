@@ -1,0 +1,19 @@
+uuid: 65145a03-be3d-4145-8602-113ac21311a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_description
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.field_cta_description
+field_name: field_cta_description
+entity_type: paragraph
+bundle: cta
+label: 'CTA description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

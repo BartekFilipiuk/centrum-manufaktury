@@ -1,0 +1,12 @@
+uuid: 8f1d132f-2abb-4ba0-a472-4df78c1ad2fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: NrhzLM3J-QkuLuaP4wz0E1t_-ByEa3WigA0KxvGaZeo
+id: media.w3css_media_view_parallax
+label: 'W3CSS Media View Parallax'
+targetEntityType: media
+cache: true

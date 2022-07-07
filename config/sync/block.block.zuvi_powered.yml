@@ -1,0 +1,22 @@
+uuid: 728bae0b-6626-4287-8ba3-16ad1b8677ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zuvi
+_core:
+  default_config_hash: NO4k1ZYfGd6QvBm-YfEZjpjO-FlqCfA46FmgNW--rPQ
+id: zuvi_powered
+theme: zuvi
+region: hidden_blocks
+weight: -17
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

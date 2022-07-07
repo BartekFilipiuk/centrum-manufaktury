@@ -1,0 +1,27 @@
+uuid: bb7db79a-b4a2-4044-98af-efeddbd9b846
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - zuvi
+_core:
+  default_config_hash: mwNCCS5Q_Dl_A7WwWlIDx0or4oRZt2wBVFHSY2oZkoc
+id: zuvi_main_menu
+theme: zuvi
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 5
+  expand_all_items: false
+visibility: {  }

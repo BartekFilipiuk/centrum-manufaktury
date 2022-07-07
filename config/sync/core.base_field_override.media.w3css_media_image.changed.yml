@@ -1,0 +1,18 @@
+uuid: 6044c9ba-b2cd-452c-9e76-9d57f777623d
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.w3css_media_image
+id: media.w3css_media_image.changed
+field_name: changed
+entity_type: media
+bundle: w3css_media_image
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

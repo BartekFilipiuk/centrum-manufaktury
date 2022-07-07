@@ -1,0 +1,18 @@
+uuid: c9ce66ca-14c9-466e-a04c-b3b1a504dabc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.w3css_paragraphs_content
+id: node.w3css_paragraphs_content.created
+field_name: created
+entity_type: node
+bundle: w3css_paragraphs_content
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

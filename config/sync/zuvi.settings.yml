@@ -1,0 +1,38 @@
+_core:
+  default_config_hash: _0b2Dyb993JzkbRlFnYz7hMynhBxgPtAERPG2BDTudI
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+all_icons_show: 1
+facebook_url: ''
+twitter_url: ''
+instagram_url: ''
+linkedin_url: 'https://in.linkedin.com/company/google'
+youtube_url: 'https://www.youtube.com/user/Google'
+vimeo_url: ''
+telegram_url: ''
+whatsapp_url: ''
+github_url: ''
+vk_url: ''
+circle_type: circle_border
+slider_show: 1
+slider_code: ''
+slider_image: {  }
+slider_image_path: ''
+front_sidebar: 0
+comment_user_pic: 1
+node_author_pic: 0
+node_tags: 0
+font_icon_fontawesome: 0
+font_icon_material: 0
+copyright_text: 1
+scrolltotop_on: 1
+styling: 0
+styling_code: ''
+font_icon_fontawesome5: 0

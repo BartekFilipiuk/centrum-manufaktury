@@ -1,0 +1,22 @@
+uuid: 86de7034-1132-4f33-bdbd-82543128d7f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: shyFiIz1w4vot2_W7PjcxaT2JSAxboxfNBrHfLKtPfE
+id: yg_car_care_help
+theme: yg_car_care
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

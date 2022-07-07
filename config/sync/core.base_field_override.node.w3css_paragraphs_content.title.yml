@@ -1,0 +1,18 @@
+uuid: 601749e1-eb93-4d66-8e4c-8edfaf802c26
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.w3css_paragraphs_content
+id: node.w3css_paragraphs_content.title
+field_name: title
+entity_type: node
+bundle: w3css_paragraphs_content
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 412b8a97-2930-412a-9a3a-35e7a65566d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.body
+field_name: body
+entity_type: node
+bundle: landing_page
+label: Teaser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

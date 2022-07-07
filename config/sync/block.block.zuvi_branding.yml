@@ -1,0 +1,25 @@
+uuid: c1046238-63b4-4a29-a1e9-fbf035ad51ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zuvi
+_core:
+  default_config_hash: 9kvJX0G5hL0Bs5UcV3D-6hXTd66lP7mu10wAIqlgmVM
+id: zuvi_branding
+theme: zuvi
+region: site_branding
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 6098df4c-b74b-4c67-bfa4-7c724476e969
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: TcpwSXICumIxjltpixa_PaU5dI0VYTOrW9V7qx9KcQk
+name: 'W3CSS Paragraphs Content'
+type: w3css_paragraphs_content
+description: 'Use <em>w3css paragraphs content</em> with the W3CSS Paragraphs Bundles.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

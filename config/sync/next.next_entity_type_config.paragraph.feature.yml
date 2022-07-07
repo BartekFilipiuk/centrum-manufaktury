@@ -1,0 +1,10 @@
+uuid: b767f9c5-0625-4ee0-a633-5e7dffbca209
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph.feature
+site_resolver: site_selector
+configuration:
+  sites:
+    next_site: next_site
+  field_name: field_nextjs_reference

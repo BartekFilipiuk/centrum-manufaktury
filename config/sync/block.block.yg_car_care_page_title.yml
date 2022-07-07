@@ -1,0 +1,20 @@
+uuid: 2c7d3560-a968-47b1-93f7-7e62b8847c21
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: 0wp40IlneQ7aL73yYH8uecnISk55xnGbzU3xxLdjPV8
+id: yg_car_care_page_title
+theme: yg_car_care
+region: header
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

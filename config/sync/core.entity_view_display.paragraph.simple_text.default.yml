@@ -1,0 +1,20 @@
+uuid: b04b31cd-a776-442e-b1ca-be01ffc1ee2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple_text.field_simple_text
+    - paragraphs.paragraphs_type.simple_text
+id: paragraph.simple_text.default
+targetEntityType: paragraph
+bundle: simple_text
+mode: default
+content:
+  field_simple_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

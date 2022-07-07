@@ -1,0 +1,23 @@
+uuid: 6693ec5d-6b98-4bfd-8157-1a092988da41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.w3css_paragraphs_disable_region
+    - node.type.w3css_paragraphs_content
+  module:
+    - options
+_core:
+  default_config_hash: V2bZeuN0F4uxMgW86jpm3DZvbkGj9l_K4w6geKTab48
+id: node.w3css_paragraphs_content.w3css_paragraphs_disable_region
+field_name: w3css_paragraphs_disable_region
+entity_type: node
+bundle: w3css_paragraphs_content
+label: 'Disabled Regions'
+description: 'The left/right sidebar are disabled by default.  You can choose any other regions to be disabled.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

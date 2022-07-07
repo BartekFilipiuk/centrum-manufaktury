@@ -1,0 +1,22 @@
+uuid: d0dbff81-1776-4971-8f3b-43a860a06241
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: jlpOhP_Tu6SpGCUa8kX68orsno4ywq_x5zFHj6M1QVQ
+id: yg_car_care_powered
+theme: yg_car_care
+region: header
+weight: -4
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

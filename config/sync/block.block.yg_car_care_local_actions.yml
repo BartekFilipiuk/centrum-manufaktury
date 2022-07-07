@@ -1,0 +1,20 @@
+uuid: d6534034-3a9a-4df1-8f00-c039e356ae65
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: Qcu3915PqsvF5a5wJOjSj4ywxWXHhBv2Vaske1S6OWM
+id: yg_car_care_local_actions
+theme: yg_car_care
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

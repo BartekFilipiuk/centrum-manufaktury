@@ -1,0 +1,22 @@
+uuid: ad177d2a-fb36-475d-8c3a-694235bf7358
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: ZykEloyzMZEEYtEdhiRaOlIe554pLM_miW1kIFQqTuA
+id: yg_car_care_local_tasks
+theme: yg_car_care
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

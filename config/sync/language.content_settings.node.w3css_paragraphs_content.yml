@@ -1,0 +1,18 @@
+uuid: cec3ddab-2400-49b4-bea0-2e3d3282c383
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.w3css_paragraphs_content
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.w3css_paragraphs_content
+target_entity_type_id: node
+target_bundle: w3css_paragraphs_content
+default_langcode: site_default
+language_alterable: false

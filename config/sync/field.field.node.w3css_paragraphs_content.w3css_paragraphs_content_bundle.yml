@@ -1,0 +1,28 @@
+uuid: 0baa436a-7bf6-48f4-9d17-fdf79e7be982
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.w3css_paragraphs_content_bundle
+    - node.type.w3css_paragraphs_content
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: wDyqo0A4t1hZKap6Vi8mzuoUK0y4CwD2zCTFuglqFz0
+id: node.w3css_paragraphs_content.w3css_paragraphs_content_bundle
+field_name: w3css_paragraphs_content_bundle
+entity_type: node
+bundle: w3css_paragraphs_content
+label: 'W3CSS Paragraphs Bundle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop: {  }
+field_type: entity_reference_revisions

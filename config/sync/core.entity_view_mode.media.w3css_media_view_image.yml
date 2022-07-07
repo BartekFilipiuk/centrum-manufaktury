@@ -1,0 +1,12 @@
+uuid: 3064a9b1-b2e7-4707-9c8b-ae0b59b732ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: RUVnKsxmUcXiHJZ8NUhlkFrhyAGuquJ-wLcGUYYnzWA
+id: media.w3css_media_view_image
+label: 'W3CSS Media View Image'
+targetEntityType: media
+cache: true

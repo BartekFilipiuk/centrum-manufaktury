@@ -1,0 +1,22 @@
+uuid: fcf25c7a-a64d-4d93-9d1b-5844f7482bae
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: bkXrlEqyl1SXlHWCtpnGKex7fy_CbrZUV9yrnpZhe3s
+id: yg_car_care_breadcrumbs
+theme: yg_car_care
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,39 @@
+uuid: 529a6d37-acaf-414d-afdd-11e2bd450916
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.w3css_media_image.w3css_media_image
+    - image.style.thumbnail
+    - media.type.w3css_media_image
+  module:
+    - image
+_core:
+  default_config_hash: mFm8weOXwgCHYOkNl9rKz95itpGRDrE3DIl3CfuunTM
+id: media.w3css_media_image.media_library
+targetEntityType: media
+bundle: w3css_media_image
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  w3css_media_image:
+    type: image_image
+    weight: -50
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,57 @@
+uuid: dded8769-c897-40ec-810f-540a4ac66e61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_items
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.feature
+    - paragraphs.paragraphs_type.simple_text
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_items
+field_name: field_items
+entity_type: node
+bundle: landing_page
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      simple_text: simple_text
+      feature: feature
+    negate: 0
+    target_bundles_drag_drop:
+      feature:
+        weight: 10
+        enabled: true
+      simple_text:
+        weight: 9
+        enabled: true
+      w3css_block:
+        weight: 10
+        enabled: false
+      w3css_contact:
+        weight: 11
+        enabled: false
+      w3css_image:
+        weight: 12
+        enabled: false
+      w3css_parallax:
+        weight: 13
+        enabled: false
+      w3css_parallax_section:
+        weight: 14
+        enabled: false
+      w3css_shared:
+        weight: 15
+        enabled: false
+      w3css_simple:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

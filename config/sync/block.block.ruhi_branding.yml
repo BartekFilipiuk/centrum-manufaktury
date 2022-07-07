@@ -1,0 +1,25 @@
+uuid: 2cb301a4-d175-4944-8ade-2b49a5a7ce93
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ruhi
+_core:
+  default_config_hash: 3Axi0P3qQP2BYHA-a_DQfCspgbHNvcT8BlKbO_ufvog
+id: ruhi_branding
+theme: ruhi
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

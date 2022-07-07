@@ -1,0 +1,22 @@
+uuid: df496c4a-e0b8-4de6-909e-11aa15667d6b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ruhi
+_core:
+  default_config_hash: ZykEloyzMZEEYtEdhiRaOlIe554pLM_miW1kIFQqTuA
+id: ruhi_local_tasks
+theme: ruhi
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

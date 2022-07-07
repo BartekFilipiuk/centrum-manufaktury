@@ -1,0 +1,27 @@
+uuid: bb508a19-d031-40fb-92c6-99a41a676473
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: 7Rz9tcziY4vZ6uDnuSlS6Z9GacV1ocgEymnM-0sY8dQ
+id: yg_car_care_main_menu
+theme: yg_car_care
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 5
+  expand_all_items: false
+visibility: {  }

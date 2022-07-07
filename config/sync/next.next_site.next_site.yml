@@ -1,0 +1,9 @@
+uuid: 1ee54bb3-9bc9-498d-9b87-5ca37bd86329
+langcode: en
+status: true
+dependencies: {  }
+id: next_site
+label: 'Next Site'
+base_url: 'http://localhost:3000'
+preview_url: 'http://localhost:3000/api/preview'
+preview_secret: lodaloda.55

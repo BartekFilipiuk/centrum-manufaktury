@@ -1,0 +1,20 @@
+uuid: aca85bbb-f308-4ae6-879c-34282d7eb47d
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.w3css_media_image
+  module:
+    - path
+id: media.w3css_media_image.path
+field_name: path
+entity_type: media
+bundle: w3css_media_image
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

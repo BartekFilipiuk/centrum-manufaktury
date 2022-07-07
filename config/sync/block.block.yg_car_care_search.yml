@@ -1,0 +1,23 @@
+uuid: 2491081e-7575-4219-b72b-a6359d167dc3
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: Lvb2Z7X05mC4iCNQC49-7RywhCNRP-HJ-ugcUrSv-jY
+id: yg_car_care_search
+theme: yg_car_care
+region: header
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: node_search
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: a0ea7cf3-b434-4a4c-9054-c1745172600d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: wF_Kav8YdiYzHYj1-kAzBaEMowL4WnpDg8GU7InizaQ
+id: yg_car_care_tools
+theme: yg_car_care
+region: header
+weight: -3
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

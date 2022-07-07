@@ -1,0 +1,52 @@
+uuid: 9ccd4650-4230-46b7-b6be-99dd3aa4dcc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.events.field_event_date
+    - field.field.node.events.field_event_top_description
+    - field.field.node.events.field_sections
+    - node.type.events
+  module:
+    - datetime_range
+    - entity_reference_revisions
+    - text
+    - user
+id: node.events.default
+targetEntityType: node
+bundle: events
+mode: default
+content:
+  field_event_date:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_event_top_description:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_sections:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true

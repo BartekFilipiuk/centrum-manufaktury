@@ -1,0 +1,32 @@
+uuid: 93be2253-1c2e-46aa-9cb0-f4e357a93a30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.w3css_media_image.w3css_media_image
+    - image.style.large
+    - media.type.w3css_media_image
+  module:
+    - image
+_core:
+  default_config_hash: rAzldexNX_VD8Fx9UwYEheq9i29jYo-VWfzNYNs4ABs
+id: media.w3css_media_image.default
+targetEntityType: media
+bundle: w3css_media_image
+mode: default
+content:
+  w3css_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,27 @@
+uuid: 09764b57-5594-4c8c-a6c1-846b3854a677
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: I0Gb7i8U3Tw5U97Mc0eb9NISB2udoraGw0SBbfRrOow
+id: yg_car_care_account_menu
+theme: yg_car_care
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

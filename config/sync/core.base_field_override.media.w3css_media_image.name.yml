@@ -1,0 +1,20 @@
+uuid: 0fdbe1b4-04e2-497e-b717-f8ad23c481a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.w3css_media_image
+id: media.w3css_media_image.name
+field_name: name
+entity_type: media
+bundle: w3css_media_image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

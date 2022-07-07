@@ -1,0 +1,22 @@
+uuid: 0fe06f36-c90a-425f-b171-76ee16b6d4f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.w3css_media_image
+id: media.w3css_media_image.status
+field_name: status
+entity_type: media
+bundle: w3css_media_image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

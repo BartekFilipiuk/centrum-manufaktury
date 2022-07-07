@@ -1,0 +1,23 @@
+uuid: b1947802-6947-4284-83a9-fb02c8e12f81
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - zuvi
+_core:
+  default_config_hash: 60B9ODnLakdmzY_pKrU5XCpi3lzLkenbgSsCGvLnrLY
+id: zuvi_search
+theme: zuvi
+region: search_box
+weight: -19
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search here..'
+  label_display: visible
+  provider: search
+  page_id: node_search
+visibility: {  }

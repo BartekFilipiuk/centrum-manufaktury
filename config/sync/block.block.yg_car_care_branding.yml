@@ -1,0 +1,25 @@
+uuid: 3fbcbf6a-a8aa-4e2c-b3b4-83eb903ba8b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yg_car_care
+_core:
+  default_config_hash: 3Axi0P3qQP2BYHA-a_DQfCspgbHNvcT8BlKbO_ufvog
+id: yg_car_care_branding
+theme: yg_car_care
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

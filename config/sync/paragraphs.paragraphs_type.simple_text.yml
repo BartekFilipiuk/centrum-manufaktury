@@ -1,0 +1,10 @@
+uuid: 6853c0ac-70e1-4bef-871f-13d4afe8941b
+langcode: en
+status: true
+dependencies: {  }
+id: simple_text
+label: 'Simple text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

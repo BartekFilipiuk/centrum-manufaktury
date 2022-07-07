@@ -1,0 +1,27 @@
+uuid: 80f09d3a-27fb-4e51-8469-c117d7fa821b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - zuvi
+_core:
+  default_config_hash: dL50xdNZgqojVFfMwa4KgdDvioU-vaBCkknS5sAMVEs
+id: zuvi_account_menu
+theme: zuvi
+region: hidden_blocks
+weight: -10
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

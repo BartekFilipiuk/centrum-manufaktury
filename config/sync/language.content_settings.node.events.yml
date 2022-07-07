@@ -1,0 +1,11 @@
+uuid: adb2b1fe-fabf-44d4-9201-16ec6d13cc60
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.events
+id: node.events
+target_entity_type_id: node
+target_bundle: events
+default_langcode: site_default
+language_alterable: false
