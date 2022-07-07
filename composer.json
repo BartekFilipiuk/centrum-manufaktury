@@ -33,7 +33,7 @@
         "drupal/webform": "^6.1",
         "drupal/yg_car_care": "^2.0",
         "drupal/zuvi": "^8.1",
-        "php-http/guzzle6-adapter",
+        "php-http/guzzle6-adapter": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
