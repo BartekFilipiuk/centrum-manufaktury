@@ -7,9 +7,10 @@ build:
 
 dependencies:
     php:
-      composer/composer: '^2'
+        composer/composer: '^2'
+        drush/drush: "^10"
     nodejs:
-      yarn: "1.16"
+        yarn: "1.16"
 
 runtime:
     extensions:
@@ -87,6 +88,7 @@ mounts:
 hooks:
     build: |
         set -e
+        composer dump-autoload
     deploy: |
         set -e
         cd web
