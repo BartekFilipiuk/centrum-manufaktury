@@ -8,6 +8,7 @@ build:
 dependencies:
     php:
         composer/composer: '^2'
+        drush/drush: "^11"
     nodejs:
         yarn: "1.16"
 
