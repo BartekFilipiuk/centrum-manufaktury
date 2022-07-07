@@ -93,8 +93,8 @@ hooks:
         set -e
         cd web
         drush -y cache-rebuild
-        drush -y updatedb
-        drush -y config-import
+        drush -y updb
+        drush -y ci
 
 #crons:
 #    # Run Drupal's cron tasks every 19 minutes.
