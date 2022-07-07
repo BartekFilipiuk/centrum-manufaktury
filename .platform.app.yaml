@@ -91,9 +91,11 @@ hooks:
     post_deploy: |
         set -e
         cd web
+        echo "drush -y cache-rebuild"
         drush -y cache-rebuild
-        drush php-script uuid dir sync --script-path=/app
+        echo "drush -y updb"
         drush -y updb
+        echo "drush -y ci"
         drush -y ci
 
 #crons:
