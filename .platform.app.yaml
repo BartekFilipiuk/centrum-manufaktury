@@ -3,71 +3,103 @@ name: 'app'
 type: 'php:7.4'
 
 build:
-  flavor: composer
+    flavor: composer
 
 dependencies:
-  php:
-    drush/drush: "^10"
-    composer/composer: '^2'
-  nodejs:
-    yarn: "1.16"
+    php:
+      drush/drush: "^10"
+      composer/composer: '^2'
+    nodejs:
+      yarn: "1.16"
+
+runtime:
+    extensions:
+        - redis
+        - sodium
 
 relationships:
     database: 'database:mysql'
+    redis: 'cache:redis'
 
 web:
-  locations:
-    '/':
-      root: 'web'
-      expires: 1d
-      passthru: '/index.php'
-      allow: false
-      rules:
-        '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
-          allow: true
-        '^/robots\.txt$':
-          allow: true
-        '^/sitemap\.xml$':
-          allow: true
-        '^/sites/sites\.php$':
-          scripts: false
-        '^/sites/[^/]+/settings.*?\.php$':
-          scripts: false
+    locations:
+        '/':
+          root: 'web'
+          expires: 1d
+          passthru: '/index.php'
+          allow: false
+          rules:
+              '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+                allow: true
+              '^/robots\.txt$':
+                allow: true
+              '^/sitemap\.xml$':
+                allow: true
+              '^/sites/sites\.php$':
+                scripts: false
+              '^/sites/[^/]+/settings.*?\.php$':
+                scripts: false
 
-    '/sites/default/files':
-      allow: true
-      expires: 1y
-      passthru: '/index.php'
-      root: 'web/sites/default/files'
-      scripts: false
+        '/sites/default/files':
+            # Allow access to all files in the public files directory.
+            allow: true
+            expires: 1d
+            passthru: '/index.php'
+            root: 'web/sites/default/files'
+
+            # Do not execute PHP scripts from the writeable mount.
+            scripts: false
+
+            rules:
+                # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                '^/sites/default/files/(css|js)':
+                    expires: 2w
 
 disk: 9216
 
-runtime:
-  extensions:
-    - sodium
-
 mounts:
-  '/.drush':
-    source: local
-    source_path: drush
+    # The default Drupal files directory.
+    '/web/sites/default/files':
+        source: local
+        source_path: 'files'
+    # Drupal gets its own dedicated tmp directory. The settings.platformsh.php
+    # file will automatically configure Drupal to use this directory.
+    '/tmp':
+        source: local
+        source_path: 'tmp'
+    # Private file uploads are stored outside the web root. The settings.platformsh.php
+    # file will automatically configure Drupal to use this directory.
+    '/private':
+        source: local
+        source_path: 'private'
+    # Drush needs a scratch space for its own caches.
+    '/.drush':
+        source: local
+        source_path: 'drush'
+    # Drush will try to save backups to this directory, so it must be
+    # writeable even though you will almost never need to use it.
+    '/drush-backups':
+        source: local
+        source_path: 'drush-backups'
+    # Drupal Console will try to save backups to this directory, so it must be
+    # writeable even though you will almost never need to use it.
+    '/.console':
+        source: local
+        source_path: 'console'
 
 hooks:
-  build: |
-    set -e
-  post_deploy: |
-    set -e
-    echo "Start the post"
-    cd web
-    drush status
-    drush -y updb
-crons:
-  drupal_cron:
-    spec: '0 4 * * *'
-    cmd: 'cd web ; drush @$PLATFORM_SITE.$PLATFORM_BRANCH cron'
-  snapshot:
-    spec: '0 4 * * *'
-    cmd: |
-      if [ "$PLATFORM_BRANCH" = master ]; then
-          platform backup:create --no-wait
-      fi
+    build: |
+        set -e
+    deploy: |
+        set -e
+        php ./drush/platformsh_generate_drush_yml.php
+        cd web
+        drush -y cache-rebuild
+        drush -y updatedb
+        drush -y config-import
+
+#crons:
+#    # Run Drupal's cron tasks every 19 minutes.
+#    drupal:
+#        spec: '*/19 * * * *'
+#        cmd: 'cd web ; drush core-cron'
