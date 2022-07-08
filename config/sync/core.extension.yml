@@ -48,6 +48,7 @@ module:
   metatag_hreflang: 0
   metatag_open_graph: 0
   metatag_views: 0
+  mysql: 0
   next: 0
   next_jsonapi: 0
   node: 0
