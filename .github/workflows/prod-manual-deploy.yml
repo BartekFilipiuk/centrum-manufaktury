@@ -1,0 +1,130 @@
+name: "PRODUCTION manual deploy"
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Check to confirm PRODUCTION deploy'
+        required: true
+        type: boolean
+#  push:
+#    branches:
+#      - 'release/**'
+#      - 'hotfix/**'
+
+env:
+  PLATFORMSH_PROJECT_ID: gexuohm2qzesi
+  PLATFORMSH_SSH_KEY: ${{secrets.PLATFORMSH_SSH_KEY}}
+
+jobs:
+#  lint:
+#    name: "Lint"
+#
+#    runs-on: ubuntu-latest
+#
+#    strategy:
+#      matrix:
+#        php-version:
+#          - "7.4"
+#
+#    steps:
+#      - name: "Checkout"
+#        uses: "actions/checkout@v2"
+#
+#      - name: "Install PHP"
+#        uses: "shivammathur/setup-php@v2"
+#        with:
+#          coverage: "none"
+#          php-version: "${{ matrix.php-version }}"
+#
+#      - name: "Lint files"
+#        run: |
+#          chmod +x "${GITHUB_WORKSPACE}/.github/scripts/lint.sh"
+#          "${GITHUB_WORKSPACE}/.github/scripts/lint.sh"
+#
+#  phpcs:
+#    name: "PHP CS"
+#
+#    runs-on: ubuntu-latest
+#
+#    strategy:
+#      matrix:
+#        php-version:
+#          - "7.4"
+#        dependencies: [ locked ]
+#        include:
+#          - php-version: "7.4"
+#            dependencies: lowest
+#
+#    steps:
+#      - name: "Checkout"
+#        uses: "actions/checkout@v2"
+#
+#      - name: "Install PHP"
+#        uses: "shivammathur/setup-php@v2"
+#        with:
+#          coverage: "none"
+#          php-version: "${{ matrix.php-version }}"
+#          tools: composer:snapshot
+#
+#      - name: "Get composer cache directory"
+#        id: composercache
+#        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+#
+#      - name: "Cache dependencies"
+#        uses: actions/cache@v2
+#        with:
+#          path: ${{ steps.composercache.outputs.dir }}
+#          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+#          restore-keys: ${{ runner.os }}-composer-
+#
+#      - name: "Install dependencies"
+#        run: |
+#          composer global require drupal/coder:8.3.13
+#
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0 # important!
+#
+#      - name: "Install PHP_CodeSniffer"
+#        run: |
+#          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+#          php phpcs.phar --config-set installed_paths /home/runner/.composer/vendor/drupal/coder/coder_sniffer
+#          php phpcs.phar --version
+#          php phpcs.phar -i
+#
+#      - name: "Code Sniffer"
+#        run: |
+#          if [[ $(git diff origin/develop --name-only --diff-filter=d) ]]; then php phpcs.phar --standard=Drupal --ignore=*.md,*.html.twig,*.gif,*.eot,*.js,*.jpg,*.xml,*.png,*.svg,*.yml,*.txt,*.scss,*.config --extensions=install,module,php,inc,theme $(git diff origin/develop --name-only --diff-filter=d); else echo "No diff found"; fi
+
+  deploy-prod:
+#    needs: [lint, phpcs]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: adam7/platformsh-cli-action@v1.1
+        with:
+          token: ${{ secrets.PLATFORMSH_TOKEN }}
+      - run: |
+          mkdir -p ~/.ssh/
+          cd ~/.ssh/
+          echo "$PLATFORMSH_SSH_KEY" > ~/.ssh/id_rsa
+          chmod go-r ~/.ssh/id_rsa
+          unset SSH_KEY
+
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
+
+          cd "${GITHUB_WORKSPACE}"
+          git remote add platform gexuohm2qzesi-master-7rqtwti--app@ssh.eu-5.platform.sh
+
+          mkdir -p ~/.ssh
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H ssh.eu-5.platform.sh >> ~/.ssh/known_hosts
+          ssh-keyscan -H git.eu-5.platform.sh >> ~/.ssh/known_hosts
+          ssh-keyscan -H ssh.eu.platform.sh >> ~/.ssh/known_hosts
+          ssh-keyscan -H git.eu.platform.sh >> ~/.ssh/known_hosts
+
+          echo "Starting deploy"
+          platform project:set-remote gexuohm2qzesi
+          platform push --force --target=master
