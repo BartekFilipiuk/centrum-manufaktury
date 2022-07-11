@@ -1,0 +1,70 @@
+name: "PHP Code Sniffer"
+
+on:
+  push:
+    branches-ignore:
+      - 'release/**'
+      - 'hotfix/**'
+
+permissions:
+  contents: read
+
+env:
+  COMPOSER_FLAGS: "--ansi --no-interaction --no-progress --prefer-dist"
+  SYMFONY_PHPUNIT_REMOVE_RETURN_TYPEHINT: "1"
+
+jobs:
+  tests:
+    name: "CI"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.4"
+        dependencies: [ locked ]
+        include:
+          - php-version: "7.4"
+            dependencies: lowest
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+          tools: composer:snapshot
+
+      - name: Get composer cache directory
+        id: composercache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composercache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: "Install dependencies"
+        run: |
+          composer global require drupal/coder:8.3.13
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # important!
+
+      - name: Install PHP_CodeSniffer
+        run: |
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          php phpcs.phar --config-set installed_paths /home/runner/.composer/vendor/drupal/coder/coder_sniffer
+          php phpcs.phar --version
+          php phpcs.phar -i
+
+      - name: Code Sniffer
+        run: |
+          if [[ $(git diff origin/develop --name-only --diff-filter=d) ]]; then php phpcs.phar --standard=Drupal --ignore=*.md,*.html.twig,*.gif,*.eot,*.js,*.jpg,*.xml,*.png,*.svg,*.yml,*.txt,*.scss,*.config --extensions=install,module,php,inc,theme $(git diff origin/develop --name-only --diff-filter=d); else echo "No diff found"; fi

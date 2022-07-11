@@ -1,0 +1,33 @@
+name: "PHP Lint"
+
+on:
+  push:
+    branches-ignore:
+      - 'release/**'
+      - 'hotfix/**'
+
+jobs:
+  tests:
+    name: "Lint"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.4"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Lint files"
+        run: |
+          chmod +x "${GITHUB_WORKSPACE}/.github/scripts/lint.sh"
+          "${GITHUB_WORKSPACE}/.github/scripts/lint.sh"
