@@ -95,8 +95,8 @@ hooks:
         drush -y cache-rebuild
         echo "drush -y updb"
         drush -y updb
-        echo "drush -y ci"
-        drush -y ci
+        echo "drush -y cim"
+        drush -y cim
 
 #crons:
 #    # Run Drupal's cron tasks every 19 minutes.

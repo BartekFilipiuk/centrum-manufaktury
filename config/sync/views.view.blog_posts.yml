@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 id: blog_posts
-label: Blog
+label: Blog posts
 module: views
 description: ''
 tag: ''
