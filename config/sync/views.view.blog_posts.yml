@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 id: blog_posts
-label: Blog posts
+label: Blog posts XXX
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Blog
+      title: Blog posts XXX
       fields:
         title:
           id: title
