@@ -1,0 +1,22 @@
+uuid: daefe507-15d7-4237-9f22-e7a23cd304ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cm_theme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: cm_theme_powered
+theme: cm_theme
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

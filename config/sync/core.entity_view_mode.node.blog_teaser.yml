@@ -1,0 +1,10 @@
+uuid: 4453c135-0f0b-4dea-9b39-386fbb3ecce6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.blog_teaser
+label: 'Blog teaser'
+targetEntityType: node
+cache: true

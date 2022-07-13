@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.webform.field_webform
+    - field.field.paragraph.webform.field_webform_description
     - paragraphs.paragraphs_type.webform
   module:
     - webform
@@ -19,6 +20,14 @@ content:
     settings:
       default_data: true
       webforms: {  }
+    third_party_settings: {  }
+  field_webform_description:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

@@ -5,6 +5,7 @@ dependencies:
   module:
     - node
     - subrequests
+    - workflow
 id: nextjs
 label: nextjs
 weight: 4
@@ -12,4 +13,5 @@ is_admin: null
 permissions:
   - 'access user profiles'
   - 'bypass node access'
+  - 'create df workflow_transition'
   - 'issue subrequests'

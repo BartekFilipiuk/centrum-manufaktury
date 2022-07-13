@@ -1,9 +1,0 @@
-uuid: a1a7ac1f-8aa4-4208-a70e-0c1dabd24e02
-langcode: en
-status: true
-dependencies: {  }
-id: node.landing_page
-site_resolver: site_selector
-configuration:
-  sites:
-    next_site: next_site

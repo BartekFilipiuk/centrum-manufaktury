@@ -785,4 +785,4 @@ if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
 
-$settings['config_sync_directory'] = 'sites/default/files/config_1PF7o0YwKoKvARzFMABhHZeA3bPBzj6oKBIF1H9bDRckBYsO2z_oQSC3Y382JeJskkQetuzPCA/sync';
+$settings['config_sync_directory'] = '../config/sync';

@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_items
-    - field.field.node.landing_page.field_sections
     - node.type.landing_page
   module:
     - user
@@ -23,5 +22,4 @@ content:
 hidden:
   body: true
   field_items: true
-  field_sections: true
   langcode: true

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_items
-    - field.field.node.landing_page.field_sections
     - node.type.landing_page
   module:
     - paragraphs
@@ -34,26 +33,7 @@ content:
     third_party_settings: {  }
   field_items:
     type: paragraphs
-    weight: 121
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-  field_sections:
-    type: paragraphs
-    weight: 123
+    weight: 131
     region: content
     settings:
       title: Paragraph
@@ -88,6 +68,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap_index_now:
+    weight: 130
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
