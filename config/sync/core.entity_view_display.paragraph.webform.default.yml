@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.webform.field_webform
+    - field.field.paragraph.webform.field_webform_description
     - paragraphs.paragraphs_type.webform
   module:
     - webform
@@ -19,5 +20,12 @@ content:
       source_entity: true
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_webform_description:
+    type: basic_string
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

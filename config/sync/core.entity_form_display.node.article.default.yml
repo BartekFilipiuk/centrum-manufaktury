@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_article_publish_date
     - field.field.node.article.field_image
     - field.field.node.article.field_items
     - field.field.node.article.field_tags
@@ -12,6 +13,7 @@ dependencies:
     - node.type.article
   module:
     - comment
+    - datetime
     - image
     - paragraphs
     - path
@@ -42,6 +44,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_publish_date:
+    type: datetime_default
+    weight: 131
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -101,6 +109,16 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap_index_now:
+    weight: 130
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 120
@@ -122,6 +140,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

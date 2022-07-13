@@ -1,9 +1,0 @@
-uuid: a25f7675-8a96-4276-b9c8-eadc3d7e59a5
-langcode: en
-status: true
-dependencies: {  }
-id: node.blog
-site_resolver: site_selector
-configuration:
-  sites:
-    next_site: next_site

@@ -1,0 +1,90 @@
+uuid: 2ba7c4f8-8fca-4dde-9444-5400a3a64015
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T7gMMyFbTYLalxpIOnzJebvek2OW0b1RgLVE9I2y228
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    correction:
+      label: Correction
+      weight: -1
+      published: false
+      default_revision: false
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    need_work:
+      label: 'Need work'
+      weight: 2
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 2
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - archived
+      to: draft
+      weight: 3
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 4
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: 0
+    need_work_after_correction:
+      label: 'Need work after correction'
+      from:
+        - correction
+      to: need_work
+      weight: 6
+    publish:
+      label: Publish
+      from:
+        - correction
+        - published
+      to: published
+      weight: 1
+    send_to_correction:
+      label: 'Send to correction'
+      from:
+        - draft
+        - need_work
+      to: correction
+      weight: 5
+  entity_types:
+    node:
+      - article
+  default_moderation_state: draft

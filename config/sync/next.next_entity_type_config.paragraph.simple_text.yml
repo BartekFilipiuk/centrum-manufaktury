@@ -1,9 +1,0 @@
-uuid: c6d1ab1b-a34c-402c-ba95-a41e877b5a86
-langcode: en
-status: true
-dependencies: {  }
-id: paragraph.simple_text
-site_resolver: site_selector
-configuration:
-  sites:
-    next_site: next_site

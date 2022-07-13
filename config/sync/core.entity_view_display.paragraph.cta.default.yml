@@ -15,14 +15,14 @@ mode: default
 content:
   field_cta_description:
     type: basic_string
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_cta_link:
     type: link
-    label: above
+    label: visually_hidden
     settings:
       trim_length: 80
       url_only: false
