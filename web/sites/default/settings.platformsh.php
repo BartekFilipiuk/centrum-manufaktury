@@ -153,6 +153,8 @@ if (isset($_ENV['PLATFORM_ROUTES']) && !isset($settings['trusted_host_patterns']
 //  }
 //}
 
+$settings['config_sync_directory'] = '../config/sync';
+
 // Set the project-specific entropy value, used for generating one-time
 // keys and such.
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($settings['hash_salt'])) {
