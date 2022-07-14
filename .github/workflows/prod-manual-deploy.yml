@@ -13,7 +13,7 @@ on:
 #      - 'hotfix/**'
 
 env:
-  PLATFORMSH_PROJECT_ID: gexuohm2qzesi
+  PLATFORMSH_PROJECT_ID: 62tgvuiugwmcg
   PLATFORMSH_SSH_KEY: ${{secrets.PLATFORMSH_SSH_KEY}}
 
 jobs:
@@ -116,7 +116,7 @@ jobs:
           ssh-add ~/.ssh/id_rsa
 
           cd "${GITHUB_WORKSPACE}"
-          git remote add platform gexuohm2qzesi-master-7rqtwti--app@ssh.eu-5.platform.sh
+          git remote add platform 62tgvuiugwmcg-master-7rqtwti--app@ssh.eu-5.platform.sh
 
           mkdir -p ~/.ssh
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
@@ -126,5 +126,5 @@ jobs:
           ssh-keyscan -H git.eu.platform.sh >> ~/.ssh/known_hosts
 
           echo "Starting deploy"
-          platform project:set-remote gexuohm2qzesi
+          platform project:set-remote 62tgvuiugwmcg
           platform push --force --target=master
