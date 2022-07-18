@@ -4,7 +4,7 @@ description: This is a sub-theme of theme Olivero.
 core_version_requirement: ^8 || ^9
 base theme: olivero
 libraries:
-  - cm_theme/styles
+  - cm_theme/main
 regions:
   header: Header
   primary_menu: 'Primary menu'
