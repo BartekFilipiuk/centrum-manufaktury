@@ -87,11 +87,7 @@ mounts:
 
 hooks:
     build: |
-        echo "Compile CSS"
         set -e
-        cd web/themes/custom/cm_theme
-        npm install
-        npm run build
     deploy: |
         echo "Build"
         set -e
