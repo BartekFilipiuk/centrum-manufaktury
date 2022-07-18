@@ -87,8 +87,13 @@ mounts:
 
 hooks:
     build: |
+        echo "Compile CSS"
         set -e
-    post_deploy: |
+        cd web/themes/custom/cm_theme
+        npm install
+        npm run build
+    deploy: |
+        echo "Build"
         set -e
         cd web
         echo "drush -y cache-rebuild"
