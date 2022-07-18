@@ -1,0 +1,21 @@
+uuid: bf26a841-906b-407f-9b3f-8d39f637595b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_views_embed_header
+    - paragraphs.paragraphs_type.views_embed
+  module:
+    - text
+id: paragraph.views_embed.field_views_embed_header
+field_name: field_views_embed_header
+entity_type: paragraph
+bundle: views_embed
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

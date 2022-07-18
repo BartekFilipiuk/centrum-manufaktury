@@ -1,0 +1,33 @@
+uuid: f2e75027-9870-4fb1-9487-42929bb76e4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.views_embed.field_views_embed
+    - field.field.paragraph.views_embed.field_views_embed_header
+    - paragraphs.paragraphs_type.views_embed
+  module:
+    - text
+    - viewsreference
+id: paragraph.views_embed.default
+targetEntityType: paragraph
+bundle: views_embed
+mode: default
+content:
+  field_views_embed:
+    type: viewsreference_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_views_embed_header:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

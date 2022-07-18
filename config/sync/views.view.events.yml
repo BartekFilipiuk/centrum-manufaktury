@@ -192,7 +192,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No upcoming events'
+            format: basic_html
+          tokenize: false
       sorts:
         created:
           id: created
@@ -514,6 +527,35 @@ display:
       displays:
         page_1: page_1
       attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_event_date'
+  block_1:
+    id: block_1
+    display_title: 'Upcoming events block'
+    display_plugin: block
+    position: 3
+    display_options:
+      title: 'Upcoming events'
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
+      defaults:
+        title: false
+        pager: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
