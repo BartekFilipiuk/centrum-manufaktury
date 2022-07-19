@@ -127,4 +127,4 @@ jobs:
 
           echo "Starting deploy"
           platform project:set-remote u4r6t6onvymn2
-          platform push --force --target=master
+          platform environment:redeploy -e master -y
