@@ -15,6 +15,7 @@ on:
 env:
   PLATFORMSH_PROJECT_ID: vlbiksjbnxdca
   PLATFORMSH_SSH_KEY: ${{secrets.PLATFORMSH_SSH_KEY}}
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
 #  lint:
@@ -125,6 +126,7 @@ jobs:
           ssh-keyscan -H ssh.eu.platform.sh >> ~/.ssh/known_hosts
           ssh-keyscan -H git.eu.platform.sh >> ~/.ssh/known_hosts
 
-          echo "Starting deploy"
+          echo "Starting deploy to "
+          echo "$BRANCH_NAME"
           platform project:set-remote vlbiksjbnxdca
           platform push --force --target=master
