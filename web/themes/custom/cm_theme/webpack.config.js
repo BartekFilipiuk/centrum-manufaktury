@@ -1,7 +1,18 @@
 const globImporter = require("node-sass-glob-importer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const glob = require('glob');
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+
+const entry = {};
+
+// ES6 JS in the theme.
+const themeSrcPath = path.resolve(__dirname, `js`);
+const matchesInTheme = glob.sync(`${themeSrcPath}/**/*.es6.js`);
+
+matchesInTheme.forEach(match => {
+  entry[match] = match;
+});
 
 module.exports = (env, argv) => {
   const isDevMode = argv.mode === "development";

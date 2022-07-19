@@ -88,8 +88,7 @@ mounts:
 hooks:
     build: |
         set -e
-    deploy: |
-        echo "Build"
+    post_deploy: |
         set -e
         cd web
         echo "drush -y cache-rebuild"
