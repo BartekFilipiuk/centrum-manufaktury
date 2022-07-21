@@ -129,4 +129,5 @@ jobs:
 
           echo "Starting deploy to"
           echo "$BRANCH_NAME"
+          platform project:set-remote 2ouy3kcwjjppc
           git push platform $BRANCH_NAME
