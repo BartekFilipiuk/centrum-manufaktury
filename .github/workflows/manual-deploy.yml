@@ -107,6 +107,7 @@ jobs:
         with:
           token: ${{ secrets.PLATFORMSH_TOKEN }}
       - run: |
+          echo "Run deploy"
           mkdir -p ~/.ssh/
           cd ~/.ssh/
           echo "$PLATFORMSH_SSH_KEY" > ~/.ssh/id_rsa
