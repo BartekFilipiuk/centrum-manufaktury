@@ -128,5 +128,4 @@ jobs:
 
           echo "Starting deploy to"
           echo "$BRANCH_NAME"
-          git fetch
           git push platform $BRANCH_NAME
