@@ -118,7 +118,7 @@ jobs:
           ssh-add ~/.ssh/id_rsa
 
           cd "${GITHUB_WORKSPACE}"
-          git remote add platform 2ouy3kcwjjppc-$BRANCH_NAME-7rqtwti--app@ssh.eu-5.platform.sh
+          git remote add platform 2ouy3kcwjjppc-develop-sr3snxi--app@ssh.eu-5.platform.sh
 
           mkdir -p ~/.ssh
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
